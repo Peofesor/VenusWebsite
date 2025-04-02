@@ -252,3 +252,12 @@ h3{
     margin-top: 20px;
     font-weight: 600;
 }
+.icons{
+    color: #f44336;
+    margin: 0 13px;
+    cursor: pointer;
+    padding: 18px 0;
+}
+.fa-solid.fa-heart{
+    color: #f44336;
+}
