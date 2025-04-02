@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>Venus</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+</head>
+    
+<body>
+<section class="header">
+    <nav>
+        <a href="index.html"><img src="Bilder/logo.png"></a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>   
+            <ul>
+                <li><a href="">HOME</a></li>
+                <li><a href="">GAMES</a></li>
+                <li><a href="">MUSIC</a></li>
+                <li><a href="">LINKS</a></li>
+                <li><a href="">CONTACT</a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+    <div class="text-box">
+            <h1>ooga booga</h1>
+            <p>Was bistn du fürn neunzehnhundertnuller</p>
+            <a href="" class="hero-btn">Hier gehts zum Oger</a>
+    </div>
+</section>
+<!--------- Games --------->
+<section class="games">
+    <h1>Games Ive worked on</h1>
+    <p>and engines I've worked with.</p>
+
+    <div class="row">
+        <div class="games-col">
+            <h3>Hunted Skies</h3>
+            <p>Arcade shooter realised in the Vektoria Engine. Flying above procedurally generated terrain.</p>
+        </div>
+        <div class="games-col">
+            <h3>2D Platformer</h3>
+            <p>A 2D Platformer realised with the Godot engine.</p>
+        </div>
+        <div class="games-col">
+            <h3>flupy burd</h3>
+            <p>A version of flappy bird realised with the Unity Engine.</p>
+        </div>
+        <div class="games-col">
+            <h3>SoloPlanning</h3>
+            <p>A simple sorting game realised in Unity.</p>
+        </div>
+
+    </div>
+</section>
+
+<!--------- Music -------->
+<section class="music">
+    <h1>i make music jo</h1>
+    <p>ich schwör das nächste Lied ist echt das beste bis jetzt</p>
+
+    <div class="row">
+        <div class="music-col">
+            <img src="Bilder/DSC02073.JPG">
+            <div class="layer">
+                <h3>Wo?</h3>
+            </div>
+        </div>
+        <div class="music-col">
+            <img src="Bilder/DSC02073.JPG">
+            <div class="layer">
+                <h3>Venus</h3>
+            </div>
+        </div>
+        <div class="music-col">
+            <img src="Bilder/DSC02073.JPG">
+            <div class="layer">
+                <h3>Italienische Straßen</h3>
+            </div>
+        </div>
+        <div class="music-col">
+            <img src="Bilder/DSC02073.JPG">
+            <div class="layer">
+                <h3>Die Reise</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--------- Links -------->
+<section class="links">
+    <h1>All my links</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+    <div class="row">
+        <div class="facilities-col">
+            <img src="Bilder\DSC02168.JPG">
+            <h3>Instagram</h3>
+            <p>hier link einfügen</p>
+        </div>
+        <div class="facilities-col">
+            <img src="Bilder\DSC02168.JPG">
+            <h3>Spotify</h3>
+            <p>hier link einfügen</p>
+        </div>
+        <div class="facilities-col">
+            <img src="Bilder\DSC02168.JPG">
+            <h3>Github</h3>
+            <p>hier link einfügen</p>
+        </div>
+        <div class="facilities-col">
+            <img src="Bilder\DSC02168.JPG">
+            <h3>Website</h3>
+            <p>hier link einfügen</p>
+        </div>  
+    </div>
+</section>
+
+<!-- Footer -->
+ <section class="footer">
+    <h4>About me</h4>
+    <div>
+        <i class="fa fa-instagram"></i>
+        <i class="fa fa-spotify"></i>
+        <i class="fa fa-github"></i>
+    </div>
+ </section>
+
+
+
+
+
+</section>
+
+
+
+
+<!--------- JavaScript for Toggle Menu --------->
+<script>
+    var navLinks = document.getElementById("navLinks");
+    function showMenu(){
+        navLinks.style.right = "0";
+    }
+    function hideMenu(){
+        navLinks.style.right = "-200px";
+    }
+</script>
+
+</body>
+</html>
