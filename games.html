@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games-Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+</head>
+
+<body class="games-page">
+    <section class="header">
+        <nav>
+            <a href="index.html"><img src="Bilder/logo.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="games.html">GAMES-PORTFOLIO</a></li>
+                    <li><a href="">MUSIC</a></li>
+                    <li><a href="">LINKS</a></li>
+                    <li><a href="">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <div class="text-box">
+            <h1>My Games</h1>
+            <p>Explore the games I've worked on.</p>
+        </div>
+    </section>
+    
+    <!-- Games Section -->
+    <section class="games">
+        <div class="column">
+            <!--Hunted Skies-->
+            <div class="game-panel">
+                <div class="frame-container">
+                    <video controls>
+                        <source src="path/to/hunted-skies-video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <a href="https://github.com/Peofesor/Vektoria-3D-FlyingGame" target="_blank" class="hero-btn-black">
+                        <i class="fa-brands fa-github"></i> View on GitHub
+                    </a>
+                </div>
+                <div class="text-container">
+                    <h3>Hunted Skies</h3>
+                    <p>Fly above a procedurally generated island in this 3D action game. Choose from different planes,
+                        dodge enemy turrets, and fight hostile aircraft. Manage your fuel carefully – you only refill by
+                        taking down enemies. Run out of fuel, and you crash.
+                        <br><br>This game was created as part of the GE-Lab course led by Prof. Dr. Tobias Breiner at
+                        the University of Applied Sciences Kempten.
+                        <br><br>This game was created using the Vektoria engine.
+                    </p>
+                </div>
+            </div>
+            <!--Flappy Bird-->
+            <div class="game-panel">
+                <div class="text-container">
+                    <h3>Flupy Burd</h3>
+                    <p>A version of flappy bird realised in the Unity engine.
+                        <br><br>The score is saved to a database.
+                        <br><br>Try beating the high score!
+                    </p>
+                </div>
+                <div class="frame-container">
+                    <video controls>
+                        <source src="path/to/flappybirgvideo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <a href="https://github.com/Peofesor/Unity-2D-FlappyBird" target="_blank" class="hero-btn-black">
+                        <i class="fa-brands fa-github"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
+            <!--SoloPlanner-->
+            <div class="game-panel">
+                <div class="frame-container">
+                    <video controls>
+                        <source src="path/to/soloplanner.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <a href="https://github.com/Peofesor/Unity-2D-ExhibitionGame" target="_blank"
+                        class="hero-btn-black">
+                        <i class="fa-brands fa-github"></i> View on GitHub
+                    </a>
+                </div>
+                <div class="text-container">
+                    <h3>SoloPlanner</h3>
+                    <p>I created this game in my freetime for the company I worked at as a student.
+                        The company builds logistic software and regularly has exhibition stands at logistics fairs.
+                        <br>This small game is designed to be presented there to draw potential customers in. It is
+                        intentionally simple and short.
+                </div>
+            </div>
+            <!--2D Platformer-->
+            <div class="game-panel">
+                <div class="text-container">
+                    <h3>2D Platformer</h3>
+                    <p>A 2D platfomer realised with the Godot engine.
+                        <br>Containing enemies, moving platforms and coins to collect.
+                    </p>
+                </div>
+                <div class="frame-container">
+                    <video controls>
+                        <source src="path/to/2d_platformer.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <a href="https://github.com/Peofesor/Godot-2D-Platformer" target="_blank" class="hero-btn-black">
+                        <i class="fa-brands fa-github"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section class="footer">
+        <h4>Quick Links</h4>
+        <div class="icons">
+            <a href="https://www.instagram.com/venus.on.demand/" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://open.spotify.com/intl-de/artist/4SixVKbdv3kaprt4zqWNoD?si=iBgn0QxXS8WATPb0gXRm3A"
+                target="_blank">
+                <i class="fa-brands fa-spotify"></i>
+            </a>
+            <a href="https://github.com/Peofesor" target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
+        </div>
+        <p>Made with <i class="fa-solid fa-heart"></i></p>
+    </section>
+
+
+
+    <!--------- JavaScript for Toggle Menu --------->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+    </script>
+
+</body>
+
+</html>
