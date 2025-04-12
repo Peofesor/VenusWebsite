@@ -157,7 +157,7 @@ nav i[class*="fa-"] {
     display: none;
 }
 
-@media(max-width: 700px) {
+@media(max-width: 768px) {
     .text-box h1 {
         font-size: 20px;
     }
@@ -203,6 +203,8 @@ nav i[class*="fa-"] {
 .games-page{
     padding: 0px 0;
     background-image: url("Bilder/desert.jpg");
+    background-position: center;
+    background-size: cover;
 }
 
 body.games-page .header {
@@ -305,6 +307,7 @@ h3 {
 @media(max-width: 768px) {
     .row {
         flex-direction: column;
+        gap: 20px;
     }
 
     .game-panel {
@@ -372,13 +375,13 @@ h3 {
 }
 
 .layer:hover {
-    background: rgba(226, 0, 0, 0.7);
+    background: rgba(255, 255, 255, 0.615);
 }
 
 .layer h3 {
     width: 100%;
     font-weight: 500;
-    color: #fff;
+    color: #000000;
     font-size: 26px;
     bottom: 0;
     left: 50%;
@@ -405,8 +408,16 @@ h3 {
 .facilities-col {
     flex-basis: 23%;
     border-radius: 10px;
-    margin-bottom: 5%;
+    margin-bottom: 0;
     text-align: left;
+    transition: 0.5s;
+    position: relative; 
+    overflow: hidden;
+    max-height: 300px;
+}
+
+.facilities-col:hover{
+    box-shadow: 0 0 100px 50px rgb(255, 255, 255);
 }
 
 .facilities-col img {
@@ -415,6 +426,7 @@ h3 {
     height: 300px;
     max-width: 100%; /* Verhindert, dass Bilder über Container hinausragen */
     object-fit: cover; /* Behält das Seitenverhältnis bei */
+    display: block;
 }
 
 .facilities-col p {
@@ -424,7 +436,7 @@ h3 {
 .facilities-col h3 {
     margin-top: 16px;
     margin-bottom: 15px;
-    text-align: left;
+    text-align: center;
 }
 
 /*-----------footer----------*/
@@ -445,6 +457,10 @@ h3 {
     margin: 0 13px;
     cursor: pointer;
     padding: 18px 0;
+}
+
+.icons i {
+    font-size: 50px;
 }
 
 .fa-solid.fa-heart {
