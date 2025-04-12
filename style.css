@@ -251,6 +251,7 @@ h3 {
 
 .game-panel video {
     height: auto;
+    max-height: 350px;
 }
 
 .game-panel .frame-container {
