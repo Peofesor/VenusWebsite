@@ -34,7 +34,7 @@
             <p>Explore the games I've worked on.</p>
         </div>
     </section>
-    
+
     <!-- Games Section -->
     <section class="games">
         <div class="column">
@@ -50,7 +50,8 @@
                     </a>
                 </div>
                 <div class="text-container">
-                    <h3>Hunted Skies | <img src="Bilder/vektoria_icon.png" style="height: 1em; vertical-align: middle;"> Vektoria Engine C++</h3>
+                    <h3>Hunted Skies | <img src="Bilder/vektoria_icon.png" style="height: 1em; vertical-align: middle;">
+                        Vektoria Engine C++</h3>
                     <p>Fly above a procedurally generated island in this 3D action game. Choose from different planes,
                         dodge enemy turrets, and fight hostile aircraft. Manage your fuel carefully – you only refill by
                         taking down enemies. Run out of fuel, and you crash.
@@ -59,10 +60,13 @@
                         <br>This game was created using the Vektoria engine.
                         <br><br>My main contributions were:
                     </p>
-                    <ul><li>creating the turrets, which included calculating the shooting vector, their dynamic turning and alignment towards the player and the random turret spawning on the island</li>
+                    <ul>
+                        <li>creating the turrets, which included calculating the shooting vector, their dynamic turning
+                            and alignment towards the player and the random turret spawning on the island</li>
                         <li>creating the landscape with the use of perlin noise</li>
                         <li>project management</li>
-                        <li>game design</li></ul>
+                        <li>game design</li>
+                    </ul>
                 </div>
             </div>
             <!--Flappy Bird-->
@@ -110,7 +114,8 @@
             <!--2D Platformer-->
             <div class="game-panel">
                 <div class="text-container">
-                    <h3>2D Platformer | <img src="Bilder/godot_icon.png" style="height: 1em; vertical-align: middle;"> Godot Engine GD Script</h3>
+                    <h3>2D Platformer | <img src="Bilder/godot_icon.png" style="height: 1em; vertical-align: middle;">
+                        Godot Engine GD Script</h3>
                     <p>A 2D platfomer realised with the Godot engine.
                         <br>Containing enemies, moving platforms and coins to collect.
                     </p>
@@ -159,6 +164,19 @@
         }
     </script>
 
+    <!--------- JavaScript for Mobile Autoplay Video --------->
+    <script>
+        // Finde alle Videos auf der Seite
+        document.addEventListener('DOMContentLoaded', function () {
+            const videos = document.querySelectorAll('video');
+            videos.forEach(video => {
+                // Versuche, das Video abzuspielen
+                video.play().catch(error => {
+                    console.log('Autoplay wurde blockiert:', error);
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
