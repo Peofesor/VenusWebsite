@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+</head>
+
+<body class="music-page">
+    <section class="header">
+        <nav>
+            <a href="index.html"><img src="Bilder/logo.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="games.html">GAMES-PORTFOLIO</a></li>
+                    <li><a href="music.html">MUSIC</a></li>
+                    <li><a href="">LINKS</a></li>
+                    <li><a href="">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <div class="text-box">
+            <h1>Mein Mukke</h1>
+        </div>
+    </section>
+
+
+
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+        <iframe style="border-radius:12px"
+            src="https://open.spotify.com/embed/artist/4SixVKbdv3kaprt4zqWNoD?utm_source=generator" width="80%"
+            height="352" frameBorder="0" allowfullscreen="" allow="autoplay; 
+        clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+        </iframe>
+
+        <iframe style="border-radius:12px"
+            src="https://open.spotify.com/embed/track/3FudszVSpT7eBjaHAf00RD?utm_source=generator" width="80%"
+            height="352" frameBorder="0" allowfullscreen="" allow="autoplay; 
+            clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+        </iframe>
+
+        <iframe style="border-radius:12px"
+            src="https://open.spotify.com/embed/track/6NwtOhlx9tqLaVV67kcRKC?utm_source=generator" width="80%"
+            height="352" frameBorder="0" allowfullscreen="" allow="autoplay; 
+            clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+        </iframe>
+
+        <iframe style="border-radius:12px"
+            src="https://open.spotify.com/embed/track/5zLLKqduvK9nR1dCGlqJXS?utm_source=generator" width="80%"
+            height="352" frameBorder="0" allowfullscreen="" allow="autoplay; 
+            clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+        </iframe>
+
+        <iframe style="border-radius:12px"
+            src="https://open.spotify.com/embed/track/7toy9w3C4AsixoA7fqziN2?utm_source=generator" width="80%"
+            height="352" frameBorder="0" allowfullscreen="" allow="autoplay; 
+            clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+        </iframe>
+    </div>
+
+    <!-- Footer -->
+    <section class="footer">
+        <h4>Quick Links</h4>
+        <div class="icons">
+            <a href="https://www.instagram.com/venus.on.demand/" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://open.spotify.com/intl-de/artist/4SixVKbdv3kaprt4zqWNoD?si=iBgn0QxXS8WATPb0gXRm3A"
+                target="_blank">
+                <i class="fa-brands fa-spotify"></i>
+            </a>
+            <a href="https://github.com/Peofesor" target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
+        </div>
+        <p>Made with <i class="fa-solid fa-heart"></i></p>
+    </section>
+
+
+
+    <!--------- JavaScript for Toggle Menu --------->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+    </script>
+
+</body>
+
+</html>

@@ -8,6 +8,7 @@
 html, body {
     max-width: 100%;
     overflow-x: hidden;
+    background: linear-gradient(to bottom, #ff0000, #00841a, #eaff00);
   }
 
 .header {
@@ -18,12 +19,15 @@ html, body {
     background-size: 100% 120%;
     position: relative;
     background-repeat: no-repeat; /* Verhindert die Wiederholung */
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
 }
 
 .fa-xmark {
     font-size: 50px;
 }
 
+/*-- Navigation --*/
 nav {
     display: flex;
     padding: 2% 6%;
@@ -68,6 +72,7 @@ nav img {
     width: 90%;
 }
 
+/*-- General --*/
 .text-box {
     width: 90%;
     color: #fff;
@@ -116,6 +121,35 @@ nav img {
     border: 1px solid #f44336;
     background: #f44336;
     transition: 1s;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+p {
+    color: #000000;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+
+a {
+    color: #ffff00;
+}
+
+.row {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 /* Desktop: Icons ausblenden */
@@ -168,7 +202,7 @@ nav i[class*="fa-"] {
 
 .games-page{
     padding: 0px 0;
-    background-image: url("Bilder/homepage.JPG");
+    background-image: url("Bilder/desert.jpg");
 }
 
 body.games-page .header {
@@ -187,34 +221,9 @@ body.games-page .header {
     padding: 0px;
 }
 
-h1 {
-    font-size: 36px;
-    font-weight: 600;
-}
-
-p {
-    color: #000000;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 22px;
-    padding: 10px;
-}
-
-.row {
-    margin-top: 5%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.column{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
 .games-col {
     flex-basis: 23%;
-    background: #fff3f3;
+    background: #ffb700;
     border-radius: 10px;
     margin-bottom: 10%;
     padding: 20px 12px;
@@ -229,7 +238,7 @@ h3 {
 }
 
 .games-col:hover {
-    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px 0px rgb(255, 255, 255);
 }
 
 .game-panel {
@@ -246,7 +255,7 @@ h3 {
 }
 
 .game-panel:hover{
-    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px 0px rgb(255, 255, 255);
 }
 
 .game-panel video {
@@ -315,7 +324,7 @@ h3 {
     
     .game-panel .text-container {
         width: 100%;
-        order: -1; /* Text immer zuerst anzeigen */
+        order: -1;
     }
 }
 
@@ -326,6 +335,16 @@ h3 {
     text-align: center;
     padding-top: 100px;
     margin-top: -100px;
+}
+
+.music-page {
+    background-image: url('Bilder/venus_stars.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.music-page .header {
+    background-image: none;
 }
 
 .music-col {
