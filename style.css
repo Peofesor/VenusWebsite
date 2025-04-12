@@ -4,14 +4,20 @@
     font-family: "Montserrat", sans-serif;
 }
 
+/* Verhindert horizontales Scrollen */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
 .header {
     min-height: 100vh;
     width: 100%;
     background-image: url("Bilder/homepage.JPG");
-    background-position: 50% 70%;
-    background-size: cover;
+    background-position: top center;
+    background-size: 100% 120%;
     position: relative;
-    background-size: 150%;
+    background-repeat: no-repeat; /* Verhindert die Wiederholung */
 }
 
 .fa-xmark {
@@ -157,7 +163,7 @@ nav i[class*="fa-"] {
     width: 80%;
     margin: auto;
     text-align: center;
-    padding-top: 0px;
+    padding-top: 50px;
 }
 
 .games-page{
@@ -173,6 +179,7 @@ body.games-page .header {
     background-size: cover;
     position: relative;
     background-size: 150%;
+    margin-bottom: -200px;
 }
 
 .games-page .header {
@@ -234,6 +241,12 @@ h3 {
     display: flex;
     align-items: center;
     gap: 50px;
+    transition: 0.5s;
+    border-radius: 30px;
+}
+
+.game-panel:hover{
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
 }
 
 .game-panel video {
@@ -265,9 +278,29 @@ h3 {
     max-width: none;
 }
 
-@media(max-width: 700px) {
+@media(max-width: 768px) {
     .row {
         flex-direction: column;
+    }
+
+    .game-panel {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .game-panel:nth-child(odd) {
+        flex-direction: column;
+    }
+    
+    .game-panel .frame-container {
+        min-width: auto;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .game-panel .text-container {
+        width: 100%;
+        order: -1; /* Text immer zuerst anzeigen */
     }
 }
 
@@ -277,6 +310,7 @@ h3 {
     margin: auto;
     text-align: center;
     padding-top: 100px;
+    margin-top: -100px;
 }
 
 .music-col {
@@ -342,8 +376,11 @@ h3 {
 }
 
 .facilities-col img {
-    width: 100%;
     border-radius: 10px;
+    width: 300px;
+    height: 300px;
+    max-width: 100%; /* Verhindert, dass Bilder über Container hinausragen */
+    object-fit: cover; /* Behält das Seitenverhältnis bei */
 }
 
 .facilities-col p {
@@ -379,3 +416,15 @@ h3 {
 .fa-solid.fa-heart {
     color: #f44336;
 }
+
+.fa-brands.fa-instagram {
+    color: #ff782a;
+} 
+
+.fa-brands.fa-spotify {
+    color: #15ff00;
+} 
+
+.fa-brands.fa-github {
+    color: #b400c8;
+} 
