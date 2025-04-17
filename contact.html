@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>Venus</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+</head>
+
+<body class="contact-page">
+    <section class="header">
+        <nav>
+            <a href="index.html"><img src="Bilder/logo.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="games.html">GAMES-PORTFOLIO</a></li>
+                    <li><a href="music.html">MUSIC</a></li>
+                    <li class="active"><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+    </section>
+
+    <!--------- Contact Form -------->
+    <section class="contact">
+        <h1>Contact Me</h1>
+        <p>Feel free to reach out with any questions or feedback!</p>
+
+        <div class="contact-form">
+            <div class="row">
+                <div class="contact-col">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="contact-col">
+                    <input type="email" id="email" placeholder="Your Email" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="contact-col">
+                    <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="contact-col captcha-container">
+                    <label for="captcha">CAPTCHA: What is <span id="captcha-question"></span>?</label>
+                    <input type="text" id="captcha" placeholder="Enter answer" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="contact-col">
+                    <button class="hero-btn" onclick="validateForm()">Send Message</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section class="footer">
+        <h4 style="color:white">Quick Links</h4>
+        <div class="icons">
+            <a href="https://www.instagram.com/venus.on.demand/" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://open.spotify.com/intl-de/artist/4SixVKbdv3kaprt4zqWNoD?si=iBgn0QxXS8WATPb0gXRm3A" target="_blank">
+                <i class="fa-brands fa-spotify"></i>
+            </a>
+            <a href="https://github.com/Peofesor" target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
+        </div>
+        <p style="color:white">Made with <i class="fa-solid fa-heart"></i></p>
+    </section>
+
+    <!--------- JavaScript for Toggle Menu and CAPTCHA -------->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+
+        // CAPTCHA Generation
+        function generateCaptcha() {
+            const num1 = Math.floor(Math.random() * 10) + 1;
+            const num2 = Math.floor(Math.random() * 10) + 1;
+            const answer = num1 + num2;
+            document.getElementById('captcha-question').textContent = `${num1} + ${num2}`;
+            return answer;
+        }
+
+        let captchaAnswer = generateCaptcha();
+
+        // Form Validation
+        function validateForm() {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            const captchaInput = document.getElementById('captcha').value.trim();
+
+            if (!name || !email || !message || !captchaInput) {
+                alert('Please fill out all fields.');
+                return;
+            }
+
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            if (parseInt(captchaInput) !== captchaAnswer) {
+                alert('Incorrect CAPTCHA answer. Please try again.');
+                captchaAnswer = generateCaptcha();
+                document.getElementById('captcha').value = '';
+                return;
+            }
+
+            alert('Message sent successfully! (Note: This is a demo - no real submission occurs.)');
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('message').value = '';
+            document.getElementById('captcha').value = '';
+            captchaAnswer = generateCaptcha();
+        }
+    </script>
+
+</body>
+
+</html>
