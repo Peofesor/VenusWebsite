@@ -4,15 +4,16 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Flappy Bird Web</title>
   <link rel="shortcut icon" href="TemplateData/favicon.ico">
   <link rel="stylesheet" href="TemplateData/style.css">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -79,12 +80,12 @@
     }
 
     var buildUrl = "Build";
-    var loaderUrl = buildUrl + "/Flappy Bird Export No Brotli.loader.js";
+    var loaderUrl = buildUrl + "/Exports.loader.js";
     var config = {
       arguments: [],
-      dataUrl: buildUrl + "/Flappy Bird Export No Brotli.data",
-      frameworkUrl: buildUrl + "/Flappy Bird Export No Brotli.framework.js",
-      codeUrl: buildUrl + "/Flappy Bird Export No Brotli.wasm",
+      dataUrl: buildUrl + "/Exports.data",
+      frameworkUrl: buildUrl + "/Exports.framework.js",
+      codeUrl: buildUrl + "/Exports.wasm",
       streamingAssetsUrl: "StreamingAssets",
       companyName: "DefaultCompany",
       productName: "Flappy Bird",
@@ -153,12 +154,12 @@
   <script>
     var navLinks = document.getElementById("navLinks");
     function showMenu() {
-        navLinks.style.right = "0";
+      navLinks.style.right = "0";
     }
     function hideMenu() {
-        navLinks.style.right = "-200px";
+      navLinks.style.right = "-200px";
     }
-</script>
+  </script>
 </body>
 
 </html>
