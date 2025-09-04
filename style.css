@@ -514,6 +514,30 @@ h3 {
     color: #b400c8;
 }
 
+
+/* music and voting */
+.song-container {
+    background: #fcfcff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,123,255,0.08);
+    padding: 24px;
+    margin-bottom: 8px;
+}
+.vote-buttons button {
+    font-family: 'Montserrat', sans-serif;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 8px 18px;
+    margin-right: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.vote-buttons button:hover:enabled {
+    background: #0056b3;
+}
+
 @media(max-width: 768px) {
     .text-box h1 {
         font-size: 20px;
