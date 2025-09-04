@@ -517,7 +517,7 @@ h3 {
 
 /* music and voting */
 .song-container {
-    background: #fcfcff;
+    background: #5ba5ff;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0,123,255,0.08);
     padding: 24px;
@@ -526,7 +526,6 @@ h3 {
 .vote-buttons button {
     font-family: 'Montserrat', sans-serif;
     background: #007bff;
-    color: #fff;
     border: none;
     border-radius: 12px;
     padding: 8px 18px;
