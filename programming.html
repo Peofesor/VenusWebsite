@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>programming-Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+</head>
+
+<body class="programming-portfolio">
+    <section class="header">
+        <nav>
+            <a href="index.html"><img src="Bilder/logo.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="games.html">GAMES</a></li>
+                    <li class="active"><a href="programming.html">CODING</a></li>
+                    <li><a href="music.html">MUSIC</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <div class="text-box">
+            <h1>My Programming Projects</h1>
+        </div>
+    </section>
+
+    <!-- Code Section -->
+    <section class="programming">
+        <div class="column">
+            <!--SteeringBehaviors-->
+            <div class="game-panel">
+                <div class="frame-container">
+                    <video autoplay loop muted playsinline>
+                        <source src="Videos/aishowcase.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <a href="https://github.com/Peofesor/Vektoria-AI-Behavior" target="_blank" class="hero-btn-black">
+                        <i class="fa-brands fa-github"></i> View on GitHub
+                    </a>
+                </div>
+                <div class="text-container">
+                    <h3>Implementation of Steering Behaviors for Realistic Flocking and Decision-Making <p></p>
+                    <img src="Bilder/cplusplus_icon.png" style="height: 1em; vertical-align: middle;">
+                        C++  & <img src="Bilder/vektoria_icon.png" style="height: 1em; vertical-align: middle;"> Vektoria Engine</h3>
+                    <p>Developed a modular NPC behavior system in C++ from the ground up. By combining force-based steering behaviors (flocking, wander, arrive) with a robust decision tree architecture, 
+                        I created agents capable of both physically accurate movement and context-aware decision-making.
+                    <p>
+                        Single Agent: Seek, Flee, Arrive, and Kinematic/Dynamic Wander.
+                    <p>
+                        Group Dynamics (Flocking): Separation, Cohesion, and Alignment for swarm intelligence.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section class="footer">
+        <h4 style="color: white;">Quick Links</h4>
+        <div class="icons">
+            <a href="https://www.instagram.com/venus.on.demand/" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://open.spotify.com/intl-de/artist/4SixVKbdv3kaprt4zqWNoD?si=iBgn0QxXS8WATPb0gXRm3A" target="_blank">
+                <i class="fa-brands fa-spotify"></i>
+            </a>
+            <a href="https://github.com/Peofesor" target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
+        </div>
+        <p style="color: white;">Made with <i class="fa-solid fa-heart"></i></p>
+    </section>
+
+    <!--------- JavaScript for Toggle Menu --------->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+    </script>
+
+    <!--------- JavaScript for Mobile Autoplay Video --------->
+    <script>
+        // Finde alle Videos auf der Seite
+        document.addEventListener('DOMContentLoaded', function () {
+            const videos = document.querySelectorAll('video');
+            videos.forEach(video => {
+                // Versuche, das Video abzuspielen
+                video.play().catch(error => {
+                    console.log('Autoplay wurde blockiert:', error);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

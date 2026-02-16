@@ -288,6 +288,50 @@ h3 {
     padding: 5px;
 }
 
+
+/*-- programming --*/
+.programming {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px 0;
+}
+
+.game-panel {
+    width: 100%;
+    display: flex;
+    flex-direction: row; /* Erzwingt die Nebeneinander-Ausrichtung */
+    flex-wrap: nowrap;   /* Verhindert den Umbruch auf Desktop */
+    gap: 40px;           /* Angenehmer Abstand zwischen Video und Text */
+    align-items: center; /* Zentriert Video und Text vertikal zueinander */
+    background: rgba(255, 255, 255, 0.1); /* Optional: Leichter Hintergrund für Lesbarkeit */
+    padding: 20px;
+    border-radius: 30px;
+}
+
+.game-panel .frame-container {
+    flex: 0 0 50%;       /* Das Video nimmt genau 50% der Breite ein */
+    max-width: 600px;
+    min-width: 300px;    /* Verhindert, dass es zu klein wird */
+}
+
+.game-panel .text-container {
+    flex: 1;             /* Der Text nimmt den restlichen Platz ein */
+    text-align: left;    /* Text linksbündig für bessere Lesbarkeit im Split-Screen */
+}
+
+/* Responsivität: Auf Handys soll es untereinander sein */
+@media(max-width: 768px) {
+    .game-panel {
+        flex-direction: column; /* Stapelt Video und Text auf kleinen Bildschirmen */
+        flex-wrap: wrap;
+    }
+    .game-panel .frame-container {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+}
+
 /*----------- music ----------*/
 .music {
     width: 80%;
