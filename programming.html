@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>programming-Portfolio</title>
+    <title>Programming Portfolio</title>
     <link rel="stylesheet" href="style.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
 </head>
 
 <body class="programming-portfolio">
     <section class="header">
         <nav>
-            <a href="index.html"><img src="Bilder/logo.png"></a>
+            <a href="index.html"><img src="Bilder/logo.png" alt="Logo"></a>
             <div class="nav-links" id="navLinks">
                 <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
                 <ul>
@@ -35,9 +32,55 @@
         </div>
     </section>
 
-    <!-- Code Section -->
     <section class="programming">
         <div class="column">
+            
+            <div class="game-panel">
+                <div class="frame-container">
+                    <div class="carousel">
+                        <div class="carousel-track" id="appCarousel">
+                            <video autoplay loop muted playsinline class="carousel-item">
+                                <source src="Bilder/App/like comment posts.mp4" type="video/mp4">
+                            </video>
+                            <video autoplay loop muted playsinline class="carousel-item">
+                                <source src="Bilder/App/profile and pagination.mp4" type="video/mp4">
+                            </video>
+                            <video autoplay loop muted playsinline class="carousel-item">
+                                <source src="Bilder/App/review.mp4" type="video/mp4">
+                            </video>
+                            <video autoplay loop muted playsinline class="carousel-item">
+                                <source src="Bilder/App/user registration and login auth.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+                        <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
+                    </div>
+
+                    <div class="carousel-labels">
+                        <span class="label active" onclick="currentSlideTo(0)">Social Feed</span>
+                        <span class="label" onclick="currentSlideTo(1)">Profile</span>
+                        <span class="label" onclick="currentSlideTo(2)">Reviews</span>
+                        <span class="label" onclick="currentSlideTo(3)">Auth</span>
+                    </div>
+                    
+                    <a href="https://github.com/Peofesor/ReactNative-CultureCouch" target="_blank" class="hero-btn-black">
+                        <i class="fa-brands fa-github"></i> View on GitHub
+                    </a>
+                </div>
+                <div class="text-container">
+                    <h3>Full Stack React Native Social Media App <p></p> 
+                        JavaScript & React Native</h3>
+                   
+                    <p></p>
+                    Implements features like social feed with pagination, posts, comments, likes and user profile. <p></p>
+                        Uses Realtime updates from Supabase for notifications.
+                        Everything on the frontend is built with React Native, while all the features are morrored in the backend powered by Supabase.<p>
+
+                    <p></p><strong>Tech:</strong> ReactNative, JavaScript, Supabase, Expo Router, Image Caching, Rich Text Editor
+                </div>
+            </div>
+
             <!--SteeringBehaviors-->
             <div class="game-panel">
                 <div class="frame-container">
@@ -56,54 +99,63 @@
 
                     <p><h4>Force-Based Steering Behaviors:</h4> Engineered a movement system combining simple Kinematics (Seek, Flee, Wander) with complex Dynamic Forces (Cohesion, Separation, Velocity Matching).
                     <p><h4>Advanced Flocking Simulation:</h4> Integrated weighted group dynamics to simulate realistic swarm intelligence and collective movement patterns.
-                        <p><h4>Hierarchical Decision Trees: </h4>Implemented a reasoning engine using Boolean and Option nodes to process complex NPC logic and environmental triggers at runtime.
-                            <p><h4>Knowledge Representation Layer:</h4> Developed a structured data system (KnowledgePosition, KnowledgeKinematicGroup) that allows NPCs to perceive, store, and evaluate world information.
+                    <p><h4>Hierarchical Decision Trees: </h4>Implemented a reasoning engine using Boolean and Option nodes to process complex NPC logic and environmental triggers at runtime.
+                    <p><h4>Knowledge Representation Layer:</h4> Developed a structured data system (KnowledgePosition, KnowledgeKinematicGroup) that allows NPCs to perceive, store, and evaluate world information.
                 </div>
             </div>
+
         </div>
     </section>
 
-    <!-- Footer -->
-    <section class="footer">
+    <footer class="footer">
         <h4 style="color: white;">Quick Links</h4>
         <div class="icons">
-            <a href="https://www.instagram.com/venus.on.demand/" target="_blank">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://open.spotify.com/intl-de/artist/4SixVKbdv3kaprt4zqWNoD?si=iBgn0QxXS8WATPb0gXRm3A" target="_blank">
-                <i class="fa-brands fa-spotify"></i>
-            </a>
-            <a href="https://github.com/Peofesor" target="_blank">
-                <i class="fa-brands fa-github"></i>
-            </a>
+            <a href="https://www.instagram.com/venus.on.demand/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://github.com/Peofesor" target="_blank"><i class="fa-brands fa-github"></i></a>
         </div>
         <p style="color: white;">Made with <i class="fa-solid fa-heart"></i></p>
-    </section>
+    </footer>
 
-    <!--------- JavaScript for Toggle Menu --------->
     <script>
+        // Navigation Menu
         var navLinks = document.getElementById("navLinks");
-        function showMenu() {
-            navLinks.style.right = "0";
-        }
-        function hideMenu() {
-            navLinks.style.right = "-200px";
-        }
-    </script>
+        function showMenu() { navLinks.style.right = "0"; }
+        function hideMenu() { navLinks.style.right = "-200px"; }
 
-    <!--------- JavaScript for Mobile Autoplay Video --------->
-    <script>
-        // Finde alle Videos auf der Seite
-        document.addEventListener('DOMContentLoaded', function () {
-            const videos = document.querySelectorAll('video');
-            videos.forEach(video => {
-                // Versuche, das Video abzuspielen
-                video.play().catch(error => {
-                    console.log('Autoplay wurde blockiert:', error);
-                });
+        // Carousel Logic
+        let currentSlide = 0;
+
+        function updateCarousel() {
+            const track = document.getElementById("appCarousel");
+            const slides = document.querySelectorAll(".carousel-item");
+            const labels = document.querySelectorAll(".label");
+
+            // 1. Carousel Slide bewegen
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+            // 2. Labels aktualisieren
+            labels.forEach((label, index) => {
+                label.classList.toggle("active", index === currentSlide);
             });
-        });
+
+            // 3. Video-Reset (Von vorn abspielen)
+            const activeVideo = slides[currentSlide];
+            if (activeVideo) {
+                activeVideo.currentTime = 0;
+                activeVideo.play();
+            }
+        }
+
+        function moveSlide(step) {
+            const slides = document.querySelectorAll(".carousel-item");
+            currentSlide = (currentSlide + step + slides.length) % slides.length;
+            updateCarousel();
+        }
+
+        function currentSlideTo(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
     </script>
 </body>
-
 </html>
