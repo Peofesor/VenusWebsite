@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Venus</title>
     <link rel="stylesheet" href="style.css">
 
@@ -30,17 +30,16 @@
             <i class="fa fa-bars" onclick="showMenu()"></i>
         </nav>
         <div class="text-box">
-            <h1>ooga booga</h1>
-            <p>Willkommen auf der Seite vom Oger</p>
+            <h1>Yannick Schmid</h1>
+            <p>Welcome to my website!</p>
         </div>
     </section>
 
     <!--------- Games --------->
     <section class="games">
-        <h1>Games I've worked on</h1>
-        <p>and engines I've worked with.<br><br></p>
+        <h1 style="color: white;">Games I've worked on</h1>
+        <p style="color: white;">and engines I've worked with.<br><br></p>
         <a href="games.html" class="hero-btn">View All</a>
-
 
         <div class="row">
             <div class="games-col">
@@ -48,20 +47,40 @@
                 <p>Arcade shooter realised in the Vektoria Engine. Flying above procedurally generated terrain.</p>
             </div>
             <div class="games-col">
-                <h3>2D Platformer</h3>
-                <p>A 2D Platformer realised with the Godot engine.</p>
+                <h3>Unreal 5 Throwing Game</h3>
+                <p>Third-person throwing game with custom Motion Capture animations in Unreal Engine 5.</p>
             </div>
             <div class="games-col">
                 <h3>Flupy Burd</h3>
                 <p>A version of flappy bird realised with the Unity Engine.<br><br></p>
                 <a href="flappybird.html" class="hero-btn-black">Play Flupy Burd</a>
-
             </div>
             <div class="games-col">
                 <h3>SoloPlanner</h3>
-                <p>A simple sorting game realised in Unity.</p>
+                <p>A simple sorting game realised in Unity. Built for a logistics company's exhibition stand.</p>
             </div>
+        </div>
+    </section>
 
+    <!--------- Programming --------->
+    <section class="games">
+        <h1 style="color: white;">Programming Projects</h1>
+        <p style="color: white;">Apps, tools and simulations I've built.<br><br></p>
+        <a href="programming.html" class="hero-btn">View All</a>
+
+        <div class="row">
+            <div class="games-col">
+                <h3>React Native App</h3>
+                <p>Full stack social media app with real-time updates, auth, posts, likes and comments – powered by Supabase.</p>
+            </div>
+            <div class="games-col">
+                <h3>This Website</h3>
+                <p>Hand-crafted multi-page portfolio built from scratch with HTML, CSS & JavaScript. Fully responsive.</p>
+            </div>
+            <div class="games-col">
+                <h3>AI Steering Behaviors</h3>
+                <p>Flocking simulation and decision trees with force-based steering behaviors in C++ & Vektoria Engine.</p>
+            </div>
         </div>
     </section>
 
@@ -82,7 +101,7 @@
     <!--------- Links -------->
     <section class="links">
         <h1>All my links</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
 
         <div class="row">
             <div class="facilities-col">
@@ -96,7 +115,7 @@
                 <a href="https://open.spotify.com/intl-de/artist/4SixVKbdv3kaprt4zqWNoD?si=s-YX5VvVRzK9LYA8M25BtA"><img
                         src="Bilder\venus_cover.png">
                     <div class="layer">
-                        <h3 style="color: #15ff00" ;><i class="fa-brands fa-spotify"></i> Spotify</h3>
+                        <h3 style="color: #15ff00;"><i class="fa-brands fa-spotify"></i> Spotify</h3>
                     </div>
                 </a>
             </div>
@@ -106,7 +125,6 @@
                         <h3 style="color: #b400c8;"><i class="fa-brands fa-github"></i> Github</h3>
                     </div>
                 </a>
-
             </div>
         </div>
     </section>
@@ -127,6 +145,7 @@
         </div>
         <p>Made with <i class="fa-solid fa-heart"></i></p>
     </section>
+
     <!--------- JavaScript for Toggle Menu --------->
     <script>
         var navLinks = document.getElementById("navLinks");

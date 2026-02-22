@@ -20,7 +20,6 @@ body {
     background-size: 100% 120%;
     position: relative;
     background-repeat: no-repeat;
-    /* Verhindert die Wiederholung */
     -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
     mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
 }
@@ -39,7 +38,6 @@ nav {
 
 nav img {
     width: 150px;
-
 }
 
 .nav-links {
@@ -182,6 +180,8 @@ nav i[class*="fa-"] {
     margin: auto;
     text-align: center;
     padding-top: 50px;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .games-page {
@@ -234,10 +234,15 @@ h3 {
     margin: 0 0 100px 0;
     max-width: none;
     display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     align-items: center;
     gap: 50px;
     transition: 0.5s;
     border-radius: 30px;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .game-panel:hover {
@@ -250,17 +255,21 @@ h3 {
 }
 
 .game-panel .frame-container {
-    border: 2px solid #000;
-    padding: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 15px;
     border-radius: 30px;
-    flex-shrink: 0;
-    min-width: 500px;
+    flex: 0 0 45%;
+    max-width: 500px;
+    min-width: 300px;
+    background: rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
 }
 
 .game-panel .frame-container video {
     width: 100%;
     max-width: 1500px;
     display: block;
+    border-radius: 15px;
 }
 
 .game-panel .frame-container .hero-btn-black {
@@ -295,42 +304,22 @@ h3 {
     max-width: 1200px;
     margin: 40px auto;
     padding: 20px 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
-.game-panel {
-    width: 100%;
-    display: flex;
-    flex-direction: row; /* Erzwingt die Nebeneinander-Ausrichtung */
-    flex-wrap: nowrap;   /* Verhindert den Umbruch auf Desktop */
-    gap: 40px;           /* Angenehmer Abstand zwischen Video und Text */
-    align-items: center; /* Zentriert Video und Text vertikal zueinander */
-    background: rgba(255, 255, 255, 0.1); /* Optional: Leichter Hintergrund für Lesbarkeit */
-    padding: 20px;
-    border-radius: 30px;
+.programming-portfolio {
+    background-image: url('Bilder/giraffe.jpg');
+    background-position: center;
+    background-size: cover;
 }
 
-.game-panel .frame-container {
-    flex: 0 0 50%;       /* Das Video nimmt genau 50% der Breite ein */
-    max-width: 600px;
-    min-width: 300px;    /* Verhindert, dass es zu klein wird */
+.programming-portfolio .header {
+    background-image: none;
+    min-height: auto;
+    height: 500px;
 }
 
-.game-panel .text-container {
-    flex: 1;             /* Der Text nimmt den restlichen Platz ein */
-    text-align: left;    /* Text linksbündig für bessere Lesbarkeit im Split-Screen */
-}
-
-/* Responsivität: Auf Handys soll es untereinander sein */
-@media(max-width: 768px) {
-    .game-panel {
-        flex-direction: column; /* Stapelt Video und Text auf kleinen Bildschirmen */
-        flex-wrap: wrap;
-    }
-    .game-panel .frame-container {
-        flex: 1 1 100%;
-        width: 100%;
-    }
-}
 
 /*----------- music ----------*/
 .music {
@@ -395,7 +384,6 @@ h3 {
 .layer:hover h3 {
     bottom: 49%;
     opacity: 1;
-    ;
 }
 
 
@@ -409,7 +397,7 @@ h3 {
 }
 
 .contact-page {
-    background-image: url('Bilder/contact.jpg');
+    background-image: url('Bilder/DSC02168.JPG');
     background-position: center;
     background-size: cover;
 }
@@ -502,9 +490,7 @@ h3 {
     width: 300px;
     height: 300px;
     max-width: 100%;
-    /* Verhindert, dass Bilder über Container hinausragen */
     object-fit: cover;
-    /* Behält das Seitenverhältnis bei */
     display: block;
 }
 
@@ -558,7 +544,7 @@ h3 {
     color: #b400c8;
 }
 
-.fa-brands.fa-youtube{
+.fa-brands.fa-youtube {
     color: #ff0000;
 }
 
@@ -567,10 +553,11 @@ h3 {
 .song-container {
     background: #5ba5ff;
     border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,123,255,0.08);
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.08);
     padding: 24px;
     margin-bottom: 8px;
 }
+
 .vote-buttons button {
     font-family: 'Montserrat', sans-serif;
     background: #007bff;
@@ -581,22 +568,117 @@ h3 {
     cursor: pointer;
     transition: background 0.2s;
 }
+
 .vote-buttons button:hover:enabled {
     background: #0056b3;
 }
 
 .song-group-title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2rem;
-  color: #ffffff;
-  margin: 40px 0 20px;
-  text-align: center;
-  border-bottom: 2px solid #ffaa00;
-  display: inline-block;
-  padding-bottom: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    color: #ffffff;
+    margin: 40px 0 20px;
+    text-align: center;
+    border-bottom: 2px solid #ffaa00;
+    display: inline-block;
+    padding-bottom: 5px;
 }
 
+/* --- Carousel Styles --- */
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 15px;
+    background: #ffffff;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.carousel-item {
+    min-width: 100%;
+    height: auto;
+    max-height: 450px;
+    object-fit: contain;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 10;
+    transition: 0.3s;
+}
+
+.carousel-btn:hover {
+    background: #ffaa00;
+}
+
+.prev {
+    left: 10px;
+    border-radius: 0 5px 5px 0;
+}
+
+.next {
+    right: 10px;
+    border-radius: 5px 0 0 5px;
+}
+
+/* --- Optimierung der Icons --- */
+.tech-icon {
+    height: 1.2em;
+    vertical-align: middle;
+    margin: 0 5px;
+}
+
+.carousel-labels {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: 0.3s all ease;
+    border: 1px solid transparent;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.label:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.label.active {
+    background: #ffaa00;
+    color: #000;
+    border: 1px solid #fff;
+    box-shadow: 0 0 10px rgba(255, 170, 0, 0.5);
+}
+
+/* ===================== */
+/*   MOBILE / RESPONSIVE  */
+/* ===================== */
 @media(max-width: 768px) {
+
     .text-box h1 {
         font-size: 20px;
     }
@@ -626,16 +708,14 @@ h3 {
     }
 
     .nav-links ul {
-        padding: 30px
+        padding: 30px;
     }
 
     /* Entferne den bestehenden .active-Stil */
     .nav-links ul li.active::after {
         display: none;
-        /* Deaktiviere den bestehenden Unterstrich */
     }
 
-    /* Füge den Unterstrich direkt auf das <a>-Tag */
     .nav-links ul li.active a {
         border-bottom: 2px solid #ffffff;
         display: inline-block;
@@ -646,9 +726,15 @@ h3 {
         gap: 20px;
     }
 
+    /* FIX: Panels auf Mobile richtig anzeigen */
     .game-panel {
         flex-direction: column;
+        flex-wrap: wrap;
         gap: 20px;
+        padding: 15px;
+        width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
     }
 
     .game-panel:nth-child(odd) {
@@ -656,13 +742,17 @@ h3 {
     }
 
     .game-panel .frame-container {
-        min-width: auto;
+        min-width: 0 !important;  /* Überschreibt die Desktop min-width */
         width: 100%;
+        max-width: 100%;
+        flex: 1 1 100%;
         box-sizing: border-box;
     }
 
     .game-panel .text-container {
         width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
         order: -1;
     }
 
@@ -677,112 +767,9 @@ h3 {
     }
 
     section h2 {
-    font-size: 2rem !important;
-  }
-}
+        font-size: 2rem !important;
+    }
 
-
-/* --- Carousel Styles --- */
-.carousel {
-    position: relative;
-    width: 100%;
-    overflow: hidden; /* Versteckt die anderen Videos */
-    border-radius: 15px;
-    background: #ffffff;
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: 100%;
-}
-
-.carousel-item {
-    min-width: 100%; /* Jedes Video nimmt die volle Breite des Containers ein */
-    height: auto;
-    max-height: 450px;
-    object-fit: contain;
-}
-
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    border: none;
-    padding: 15px;
-    cursor: pointer;
-    font-size: 18px;
-    z-index: 10;
-    transition: 0.3s;
-}
-
-.carousel-btn:hover {
-    background: #ffaa00;
-}
-
-.prev { left: 10px; border-radius: 0 5px 5px 0; }
-.next { right: 10px; border-radius: 5px 0 0 5px; }
-
-/* --- Optimierung der Icons --- */
-.tech-icon {
-    height: 1.2em;
-    vertical-align: middle;
-    margin: 0 5px;
-}
-
-/* --- Bestehende Panel-Korrektur --- */
-.game-panel .frame-container {
-    flex: 0 0 45%; 
-    max-width: 500px;
-    min-width: 300px;
-    border: 2px solid rgba(255,255,255,0.2);
-    padding: 15px;
-    border-radius: 30px;
-    background: rgba(0,0,0,0.2);
-}
-
-.game-panel video {
-    width: 100%;
-    border-radius: 15px;
-    display: block;
-}
-.carousel-labels {
-    display: flex;
-    justify-content: space-around;
-    padding: 15px 0;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.label {
-    font-size: 12px;
-    font-weight: 600;
-    color: #fff;
-    cursor: pointer;
-    padding: 8px 12px;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    transition: 0.3s all ease;
-    border: 1px solid transparent;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.label:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
-
-/* Aktiver Text-Zustand */
-.label.active {
-    background: #ffaa00; /* Deine Akzentfarbe */
-    color: #000;
-    border: 1px solid #fff;
-    box-shadow: 0 0 10px rgba(255, 170, 0, 0.5);
-}
-
-@media(max-width: 768px) {
     .label {
         font-size: 10px;
         padding: 6px 10px;
