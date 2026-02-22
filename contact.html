@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Venus</title>
     <link rel="stylesheet" href="style.css">
 
@@ -37,30 +37,39 @@
         <p>Feel free to reach out with any questions or feedback!</p>
 
         <div class="contact-form">
-            <div class="row">
-                <div class="contact-col">
-                    <input type="text" id="name" placeholder="Your Name" required>
+            <form id="contactForm" action="https://formsubmit.co/yan.schmid@web.de" method="POST">
+
+                <!-- FormSubmit config -->
+                <input type="hidden" name="_subject" value="New message from your portfolio!">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+
+                <div class="row">
+                    <div class="contact-col">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="contact-col">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
                 </div>
-                <div class="contact-col">
-                    <input type="email" id="email" placeholder="Your Email" required>
+                <div class="row">
+                    <div class="contact-col">
+                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="contact-col">
-                    <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+                <div class="row">
+                    <div class="contact-col captcha-container">
+                        <label for="captcha">CAPTCHA: What is <span id="captcha-question"></span>?</label>
+                        <input type="text" id="captcha" placeholder="Enter answer" required>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="contact-col captcha-container">
-                    <label for="captcha">CAPTCHA: What is <span id="captcha-question"></span>?</label>
-                    <input type="text" id="captcha" placeholder="Enter answer" required>
+                <div class="row">
+                    <div class="contact-col">
+                        <button type="button" class="hero-btn" onclick="validateForm()">Send Message</button>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="contact-col">
-                    <button class="hero-btn" onclick="validateForm()">Send Message</button>
-                </div>
-            </div>
+
+            </form>
         </div>
     </section>
 
@@ -126,12 +135,8 @@
                 return;
             }
 
-            alert('Message sent successfully! (Note: This is a demo - no real submission occurs.)');
-            document.getElementById('name').value = '';
-            document.getElementById('email').value = '';
-            document.getElementById('message').value = '';
-            document.getElementById('captcha').value = '';
-            captchaAnswer = generateCaptcha();
+            // All validation passed — submit to FormSubmit
+            document.getElementById('contactForm').submit();
         }
     </script>
 
